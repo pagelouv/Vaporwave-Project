@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.container {
+    width: 800px; /* Largura definida da área do jogo */
+    height: 400px; /* Altura definida da área do jogo */
+    margin: 50px auto; /* Centraliza a área do jogo na tela */
+    position: relative; /* Para posicionar absolutamente o carro */
+    overflow: hidden; /* Impede que o carro ultrapasse os limites */
+}
+
+.road {
+    width: 100%;
+    height: 100%;
+    background-image: url('rua1.gif'); /* Adicione uma imagem de estrada aqui */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.car {
+    margin: 0;
+    width: 200px; /* Ajuste o tamanho do carro conforme necessário */
+    height: 200px; /* Ajuste a altura do carro conforme necessário */
+    background-image: url('carro1.png'); /* Adicione uma imagem do carro aqui */
+    background-size: contain;
+    background-position: center; /* Centraliza a imagem horizontal e verticalmente */
+    position: absolute;
+    bottom: 20px;
+    left: 50%; /* O carro começará no meio da tela horizontalmente */
+}
