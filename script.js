@@ -24,3 +24,18 @@ function moveCar(event) {
     // Atualizando a posição horizontal do carro
     car.style.left = carX + 'px';
 }
+
+// Capturando elementos do DOM
+const startButton = document.getElementById('startButton');
+const gameContainer = document.getElementById('gameContainer');
+
+// Adicionando evento de clique ao botão de iniciar
+startButton.addEventListener('click', startGame);
+
+// Função para iniciar o jogo
+function startGame() {
+    // Exibindo o container do jogo
+    gameContainer.classList.remove('hidden');
+    // Removendo o botão de iniciar
+    startButton.style.display = 'none';
+}

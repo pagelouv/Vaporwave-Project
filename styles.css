@@ -22,13 +22,39 @@ body {
 }
 
 .car {
-    margin: 0;
     width: 200px; /* Ajuste o tamanho do carro conforme necessário */
-    height: 200px; /* Ajuste a altura do carro conforme necessário */
+    height: 200px;
     background-image: url('carro1.png'); /* Adicione uma imagem do carro aqui */
     background-size: contain;
-    background-position: center; /* Centraliza a imagem horizontal e verticalmente */
+    background-position: center;
     position: absolute;
     bottom: 20px;
     left: 50%; /* O carro começará no meio da tela horizontalmente */
+}
+
+.hidden {
+    display: none; /* Esconde o elemento */
+}
+
+.containerStart{
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    align-content: center;
+    overflow: show;
+    top: 50px;
+    width: 800px; /* Largura definida da área do jogo */
+    height: 400px; /* Altura definida da área do jogo */
+    background-color: red;
+}
+
+.startButton{
+    position: relative;
+    align-self: center;
+    margin: 0;
+    left: 45%;
+    padding: 15px 25px 25px;
+    border-radius: 5px;
+    border-style: none;
 }
