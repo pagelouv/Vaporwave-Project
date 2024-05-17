@@ -2,14 +2,18 @@ body {
     margin: 0;
     overflow: hidden;
     background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
     width: 800px; /* Largura definida da área do jogo */
     height: 400px; /* Altura definida da área do jogo */
-    margin: 50px auto; /* Centraliza a área do jogo na tela */
     position: relative; /* Para posicionar absolutamente o carro */
     overflow: hidden; /* Impede que o carro ultrapasse os limites */
+    background-color: black; /* Adicione o fundo da área de jogo */
 }
 
 .road {
@@ -32,29 +36,53 @@ body {
     left: 50%; /* O carro começará no meio da tela horizontalmente */
 }
 
+.collision-area {
+    position: absolute;
+    top: 35%; /* Ajuste a posição da área de colisão conforme necessário */
+    left: 25%; /* Ajuste a posição da área de colisão conforme necessário */
+    width: 50%; /* Ajuste a largura da área de colisão conforme necessário */
+    height: 50%; /* Ajuste a altura da área de colisão conforme necessário */
+    background-color: rgba(255, 0, 0, 0.5); /* Cor semitransparente para visualização, remova depois de ajustar */
+}
+
 .hidden {
     display: none; /* Esconde o elemento */
 }
 
-.containerStart{
+.containerStart {
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    position: relative;
-    align-content: center;
-    overflow: show;
-    top: 50px;
-    width: 800px; /* Largura definida da área do jogo */
-    height: 400px; /* Altura definida da área do jogo */
-    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
 }
 
-.startButton{
-    position: relative;
-    align-self: center;
-    margin: 0;
-    left: 45%;
-    padding: 15px 25px 25px;
+.startButton {
+    padding: 15px 25px;
     border-radius: 5px;
-    border-style: none;
+    border: none;
+    font-size: 20px;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 24px;
+}
+
+.item {
+    width: 50px;
+    height: 50px;
+    background-color: yellow; /* Cor do item */
+    position: absolute;
+}
+
+.bomb {
+    background-color: red;
 }

@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="containerStart">
-        <button id="startButton" class="startButton">PLAY</button>
-        <div id="gameContainer" class="container hidden">
-            <div class="road">
-                <div id="car" class="car"></div>
+    <div id="gameContainer" class="container hidden">
+        <div class="road">
+            <div id="car" class="car">
+                <div id="collisionArea" class="collision-area"></div>
             </div>
         </div>
+        <div id="score" class="score">Pontos: 0</div>
+    </div>
+    <div class="containerStart">
+        <button id="startButton" class="startButton">PLAY</button>
     </div>
     <script src="script.js"></script>
 </body>
