@@ -5,6 +5,10 @@ const startScreen = document.querySelector('.containerStart');
 const car = document.getElementById('car');
 const collisionArea = document.getElementById('collisionArea');
 const scoreElement = document.getElementById('score');
+const loja = document.querySelector('.loja');
+const estatua = document.getElementById('estatua');
+const golfinho = document.getElementById('golfinho');
+const walkman = document.getElementById('walkman');
 
 let score = 0;
 let gameInterval;
@@ -20,6 +24,8 @@ function startGame() {
     gameContainer.classList.remove('hidden');
     // Removendo o container do botão de iniciar
     startScreen.style.display = 'none';
+    // Exibindo a loja
+    loja.classList.remove('hidden');
 
     // Iniciando o intervalo para criar itens
     gameInterval = setInterval(createItem, itemFrequency);
@@ -102,7 +108,32 @@ function resetGame() {
     gameContainer.classList.add('hidden');
     // Mostrar a tela inicial
     startScreen.style.display = 'flex';
+    // Esconder a loja
+    loja.classList.add('hidden');
 
     // Remover todos os itens do jogo
     document.querySelectorAll('.item').forEach(item => item.remove());
+}
+
+// Função para comprar itens
+function comprarItem(itemId, preco) {
+    if (score >= preco) {
+        score -= preco;
+        scoreElement.textContent = 'Pontos: ' + score;
+        const item = document.getElementById(itemId);
+        item.classList.remove('hidden');
+
+        // Ações específicas para cada item
+        if (itemId === 'golfinho') {
+            item.addEventListener('click', () => {
+                const audio = new Audio('golfinho.mp3');
+                audio.play();
+            });
+        } else if (itemId === 'walkman') {
+            const audio = new Audio('musica.mp3');
+            audio.play();
+        }
+    } else {
+        alert('Pontos insuficientes!');
+    }
 }

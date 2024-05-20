@@ -3,50 +3,50 @@ body {
     overflow: hidden;
     background-color: #000;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
 }
 
 .container {
-    width: 800px; /* Largura definida da área do jogo */
-    height: 400px; /* Altura definida da área do jogo */
-    position: relative; /* Para posicionar absolutamente o carro */
-    overflow: hidden; /* Impede que o carro ultrapasse os limites */
-    background-color: black; /* Adicione o fundo da área de jogo */
+    width: 800px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
 }
 
 .road {
     width: 100%;
     height: 100%;
-    background-image: url('rua1.gif'); /* Adicione uma imagem de estrada aqui */
+    background-image: url('rua1.gif');
     background-position: center;
     background-size: cover;
     position: relative;
 }
 
 .car {
-    width: 200px; /* Ajuste o tamanho do carro conforme necessário */
+    width: 200px;
     height: 200px;
-    background-image: url('carro1.png'); /* Adicione uma imagem do carro aqui */
+    background-image: url('carro1.png');
     background-size: contain;
     background-position: center;
     position: absolute;
     bottom: 20px;
-    left: 50%; /* O carro começará no meio da tela horizontalmente */
+    left: 50%;
 }
 
 .collision-area {
     position: absolute;
-    top: 35%; /* Ajuste a posição da área de colisão conforme necessário */
-    left: 25%; /* Ajuste a posição da área de colisão conforme necessário */
-    width: 50%; /* Ajuste a largura da área de colisão conforme necessário */
-    height: 50%; /* Ajuste a altura da área de colisão conforme necessário */
-    background-color: rgba(255, 0, 0, 0.5); /* Cor semitransparente para visualização, remova depois de ajustar */
+    top: 35%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(255, 0, 0, 0.5);
 }
 
 .hidden {
-    display: none; /* Esconde o elemento */
+    display: none;
 }
 
 .containerStart {
@@ -58,7 +58,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .startButton {
@@ -79,10 +79,23 @@ body {
 .item {
     width: 50px;
     height: 50px;
-    background-color: yellow; /* Cor do item */
+    background-color: yellow;
     position: absolute;
 }
 
 .bomb {
     background-color: red;
+}
+
+.loja {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+.itemContainer button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
 }

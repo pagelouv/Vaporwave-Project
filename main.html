@@ -18,6 +18,21 @@
     <div class="containerStart">
         <button id="startButton" class="startButton">PLAY</button>
     </div>
+
+    <!-- Seção da Loja -->
+    <div class="loja">
+        <h2>Loja</h2>
+        <div class="itemContainer">
+            <button onclick="comprarItem('estatua', 50)">Comprar Estatua (50 pontos)</button>
+            <button onclick="comprarItem('golfinho', 100)">Comprar Golfinho (100 pontos)</button>
+            <button onclick="comprarItem('walkman', 150)">Comprar Walkman (150 pontos)</button>
+        </div>
+        <!-- Elementos da Loja (inicialmente ocultos) -->
+        <img src="estatua.png" alt="Estatua Vaporwave" class="item hidden" id="estatua">
+        <img src="golfinho.png" alt="Golfinho Vaporwave" class="item hidden" id="golfinho">
+        <img src="walkman.png" alt="Walkman Vaporwave" class="item hidden" id="walkman">
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
