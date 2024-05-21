@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <img src="letras.png" alt="Logo" class="logo">
+        <h1>California Racing</h1>
+    </header>
+
+    <!-- Game Container -->
     <div id="gameContainer" class="container hidden">
         <div class="road">
             <div id="car" class="car">
@@ -19,7 +26,7 @@
         <button id="startButton" class="startButton">PLAY</button>
     </div>
 
-    <!-- Seção da Loja -->
+    <!-- Loja -->
     <div class="loja">
         <h2>Loja</h2>
         <div class="itemContainer">
@@ -28,11 +35,18 @@
             <button onclick="comprarItem('walkman', 150)">Comprar Walkman (150 pontos)</button>
         </div>
         <!-- Elementos da Loja (inicialmente ocultos) -->
-        <img src="estatua.png" alt="Estatua Vaporwave" class="item hidden" id="estatua">
-        <img src="golfinho.png" alt="Golfinho Vaporwave" class="item hidden" id="golfinho">
-        <img src="walkman.png" alt="Walkman Vaporwave" class="item hidden" id="walkman">
+        <img src="estatua.png" alt="Estatua Vaporwave" class="hidden estatua" id="estatua">
+        <img src="golfinho.png" alt="Golfinho Vaporwave" class="hidden golfinho" id="golfinho">
+        <img src="walkman.jpg" alt="Walkman Vaporwave" class="hidden walkman" id="walkman">
     </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 California Racing. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <canvas id="particleCanvas"></canvas>
     <script src="script.js"></script>
 </body>
 </html>

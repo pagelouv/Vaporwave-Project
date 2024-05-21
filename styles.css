@@ -6,14 +6,42 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    background-image: url('background.jpg');
+    position: relative;
 }
 
+/* Header */
+.header {
+    width: 100%;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    text-align: center;
+    padding: 5px 0;
+    color: #000;
+    font-size: 0.5rem;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 100px; /* ajuste o tamanho conforme necessário */
+    height: auto; /* mantém a proporção */
+}
+
+.header-text {
+    margin-left: 20px; /* adiciona um espaçamento entre a logo e o texto */
+    font-size: 24px; /* ajusta o tamanho do texto conforme necessário */
+}
+
+/* Game Container */
 .container {
+    top: 2%;
     width: 800px;
     height: 400px;
     position: relative;
     overflow: hidden;
     background-color: black;
+    margin-bottom: 20px;
 }
 
 .road {
@@ -42,7 +70,6 @@ body {
     left: 25%;
     width: 50%;
     height: 50%;
-    background-color: rgba(255, 0, 0, 0.5);
 }
 
 .hidden {
@@ -66,6 +93,14 @@ body {
     border-radius: 5px;
     border: none;
     font-size: 20px;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.startButton:hover {
+    transform: scale(1.1);
 }
 
 .score {
@@ -76,21 +111,21 @@ body {
     font-size: 24px;
 }
 
-.item {
-    width: 50px;
-    height: 50px;
-    background-color: yellow;
-    position: absolute;
-}
-
-.bomb {
-    background-color: red;
-}
-
+/* Loja */
 .loja {
-    margin-top: 20px;
+    width: 100%;
     text-align: center;
     color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    box-sizing: border-box;
+    margin-bottom: 10vh;
+}
+
+.itemContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .itemContainer button {
@@ -98,4 +133,72 @@ body {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    border: none;
+    color: #000;
+    transition: transform 0.2s;
+}
+
+.itemContainer button:hover {
+    transform: scale(1.1);
+}
+
+.item {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    background-image: url('windows.png');
+}
+
+.bomb {
+    position: absolute;
+    background-size: stretch;
+    background-position: center;
+    background-image: url('playstation.png');
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    text-align: center;
+    padding: 10px 0;
+    color: #000;
+    font-size: 0.8em;
+    box-sizing: border-box;
+}
+
+.estatua {
+    position: absolute;
+    top: 20%;
+    left: 10px;
+    width: 300px;
+    height: auto;
+}
+
+.golfinho {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: auto;
+}
+
+.walkman {
+    position: absolute;
+    top: 25%;
+    right: 60px;
+    width: 200px;
+    height: auto;
+}
+
+#particleCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }

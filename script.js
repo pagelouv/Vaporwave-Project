@@ -10,6 +10,11 @@ const estatua = document.getElementById('estatua');
 const golfinho = document.getElementById('golfinho');
 const walkman = document.getElementById('walkman');
 
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 let score = 0;
 let gameInterval;
 const itemFrequency = 2000; // Frequência com que os itens caem (em milissegundos)
@@ -115,6 +120,13 @@ function resetGame() {
     document.querySelectorAll('.item').forEach(item => item.remove());
 }
 
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 // Função para comprar itens
 function comprarItem(itemId, preco) {
     if (score >= preco) {
@@ -130,10 +142,93 @@ function comprarItem(itemId, preco) {
                 audio.play();
             });
         } else if (itemId === 'walkman') {
-            const audio = new Audio('musica.mp3');
+            const audio = new Audio('walkman.mp3');
             audio.play();
         }
+
     } else {
         alert('Pontos insuficientes!');
     }
 }
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Configurações das partículas
+const particleCount = 50; // Número de partículas
+const particleSpeed = 1; // Velocidade das partículas
+const particleSize = 3; // Tamanho das partículas
+
+// Criação do canvas
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+
+// Define o tamanho do canvas como o tamanho da janela
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Array para armazenar as partículas
+let particles = [];
+
+// Função para criar uma partícula
+function createParticle() {
+    const particle = {
+        x: Math.random() * canvas.width, // Posição horizontal aleatória
+        y: canvas.height + particleSize, // Começa abaixo da tela
+        speed: Math.random() * particleSpeed + 1, // Velocidade aleatória
+    };
+    particles.push(particle);
+}
+
+// Função para atualizar as partículas
+function updateParticles() {
+    for (let i = 0; i < particles.length; i++) {
+        const particle = particles[i];
+
+        // Move a partícula para cima
+        particle.y -= particle.speed;
+
+        // Remove a partícula se ela sair do topo da tela
+        if (particle.y < 0) {
+            particles.splice(i, 1);
+            i--;
+        }
+    }
+}
+
+// Função para desenhar as partículas com gradiente
+function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Cria um gradiente linear
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, '#ff00ff'); // Cor inicial
+    gradient.addColorStop(1, '#00ffff'); // Cor final
+
+    for (let i = 0; i < particles.length; i++) {
+        const particle = particles[i];
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particleSize, 0, Math.PI * 2);
+        ctx.fillStyle = gradient; // Aplica o gradiente como cor de preenchimento
+        ctx.fill();
+    }
+}
+
+// Função principal de animação
+function animate() {
+    requestAnimationFrame(animate);
+
+    // Cria uma nova partícula a cada quadro
+    if (particles.length < particleCount) {
+        createParticle();
+    }
+
+    updateParticles();
+    drawParticles();
+}
+
+// Inicia a animação
+animate();
