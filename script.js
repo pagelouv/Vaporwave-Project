@@ -20,19 +20,16 @@ let gameInterval;
 const itemFrequency = 2000; // Frequência com que os itens caem (em milissegundos)
 const bombChance = 0.1; // 10% de chance de aparecer uma bomba
 
-// Adicionando evento de clique ao botão de iniciar
+// botão de iniciar
 startButton.addEventListener('click', startGame);
 
 // Função para iniciar o jogo
 function startGame() {
-    // Exibindo o container do jogo
     gameContainer.classList.remove('hidden');
-    // Removendo o container do botão de iniciar
     startScreen.style.display = 'none';
     // Exibindo a loja
     loja.classList.remove('hidden');
 
-    // Iniciando o intervalo para criar itens
     gameInterval = setInterval(createItem, itemFrequency);
 }
 
@@ -104,16 +101,13 @@ function checkCollision(car, item) {
     );
 }
 
-// Adicionando evento de movimento do mouse para mover o carro
+// movimento do mouse para mover o carro
 document.addEventListener('mousemove', moveCar);
 
 // Função para resetar o jogo
 function resetGame() {
-    // Esconder o container do jogo
     gameContainer.classList.add('hidden');
-    // Mostrar a tela inicial
     startScreen.style.display = 'flex';
-    // Esconder a loja
     loja.classList.add('hidden');
 
     // Remover todos os itens do jogo
@@ -158,9 +152,9 @@ function comprarItem(itemId, preco) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Configurações das partículas
-const particleCount = 50; // Número de partículas
-const particleSpeed = 1; // Velocidade das partículas
-const particleSize = 3; // Tamanho das partículas
+const particleCount = 50;
+const particleSpeed = 1;
+const particleSize = 3;
 
 // Criação do canvas
 const canvas = document.getElementById('particleCanvas');
@@ -176,9 +170,9 @@ let particles = [];
 // Função para criar uma partícula
 function createParticle() {
     const particle = {
-        x: Math.random() * canvas.width, // Posição horizontal aleatória
-        y: canvas.height + particleSize, // Começa abaixo da tela
-        speed: Math.random() * particleSpeed + 1, // Velocidade aleatória
+        x: Math.random() * canvas.width,
+        y: canvas.height + particleSize,
+        speed: Math.random() * particleSpeed + 1,
     };
     particles.push(particle);
 }
